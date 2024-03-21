@@ -1,5 +1,5 @@
 ## 简单说明
-
+##### github markdown矩阵渲染错误，可以看pdf文件
 ---
 
 CLF约束  
