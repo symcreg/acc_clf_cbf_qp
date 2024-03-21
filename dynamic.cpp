@@ -9,7 +9,7 @@ float p = 0;
 float v = 11.0f;
 float z = 10;
 
-float param_delta = 0.0f;
+float param_delta = 5.0f;
 
 float control_u = 0;
 float aCLF = 0;

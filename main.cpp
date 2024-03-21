@@ -4,12 +4,11 @@
 #include "display.h"
 using namespace std;
 using namespace cv;
-//TODO:fix the problem of qp infeasible, correct dynamic delta to relax clf constraint
-
+//TODO:fix slack variable which makes clf constraint ineffective
 //#define CLF_TEST
-//#define CBF_TEST
+#define CBF_TEST
 //#define ALL_TEST
-#define SLACK_TEST
+//#define SLACK_TEST
 int main() {
     int i = 0;
     vector<float> vData;
@@ -38,9 +37,10 @@ int main() {
         constraintControl();
         displayState(INVISIBLE, INVISIBLE);
     }
-    cout<<i<<endl;
-    displayVData(VISIBLE, VISIBLE, vData);
+    displayVData(INVISIBLE, VISIBLE, vData);
     displayUData(INVISIBLE, VISIBLE, uData);
     displayDelta(INVISIBLE, VISIBLE, Delta);
+
+    cout<<"i:"<<i<<" z:"<<z<<endl;
     return 0;
 }

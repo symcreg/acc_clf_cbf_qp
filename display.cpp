@@ -71,7 +71,7 @@ void displayDelta(int textVisible, int imageVisible, std::vector<float>& delta){
             cout<<delta[i]<<endl;
         }
         if(imageVisible == VISIBLE){
-            line(img, Point(i * 10, 500), Point(i * 10, 500 - delta[i] * 3), Scalar(255, 255, 255), 2);
+            line(img, Point(i * 10, 500), Point(i * 10, 500 - delta[i]), Scalar(255, 255, 255), 2);
         }
     }
     if(imageVisible == VISIBLE){
