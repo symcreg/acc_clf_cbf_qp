@@ -29,6 +29,59 @@ void updateConstraint(){
     aCBF = (param_Th + (v - physic_v_0)/(param_c * physic_g)) / physic_m;
     constraintValueCBF = physic_v_0 - v + param_gamma * (z - param_Th * v - 0.5f * powf(v - physic_v_0,2) / (param_c * physic_g));
 }
+int qsSlackSolveReverse(){
+    OSQPFloat P_x[2] = {param_p, 1};
+    OSQPInt P_nnz = 2;
+    OSQPInt P_i[3] = {0, 1};
+    OSQPInt P_p[3] = {0, 1, 2};
+    OSQPFloat q[2] = {0, 0};
+
+
+    OSQPFloat A_x[4] = {-1, 1, aCLF, aCBF};
+    OSQPInt A_nnz = 4;
+    OSQPInt A_i[4] = {0, 2, 0, 1};
+    OSQPInt A_p[3] = {0, 2, 4};
+    OSQPFloat l[3] = {constraintValueCLF - param_delta, -OSQP_INFTY,0};
+    OSQPFloat u[3] = {constraintValueCLF - param_delta ,constraintValueCBF,OSQP_INFTY};
+
+    OSQPInt n = 2;
+    OSQPInt m = 3;
+
+    OSQPInt exitFlag = 0;
+
+    OSQPSolver *solver = nullptr;
+    OSQPSettings *settings = nullptr;
+
+    auto *P = (OSQPCscMatrix*)malloc(sizeof(OSQPCscMatrix));
+    auto *A = (OSQPCscMatrix*)malloc(sizeof(OSQPCscMatrix));
+
+    csc_set_data(P, n, n, P_nnz, P_x, P_i, P_p);
+    csc_set_data(A, m, n, A_nnz, A_x, A_i, A_p);
+
+
+    settings = (OSQPSettings *)malloc(sizeof(OSQPSettings));
+    if(settings){
+        osqp_set_default_settings(settings);
+        settings->verbose = false;
+        settings->alpha = 1.0;
+    }
+
+    exitFlag = osqp_setup(&solver, P, q, A, l, u, m, n, settings);
+    if(!exitFlag){
+        // Solve Problem
+        exitFlag= osqp_solve(solver);
+    }
+    control_u = solver->solution->x[0];
+    param_delta = solver->solution->x[1];
+
+    osqp_cleanup(solver);
+    if(P) free(P);
+    if(A) free(A);
+    if(settings) free(settings);
+
+    return (int)exitFlag;
+
+}
 int qpSlackSolve(){
     //qp problem
     //1/2 * x^T * P * x + q^T * x

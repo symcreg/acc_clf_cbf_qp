@@ -35,6 +35,7 @@ extern float control_u;
 
 void updateState();
 void updateConstraint();
+int qsSlackSolveReverse();
 int qpSlackSolve();
 int qpSolve();
 int clfQPSolve();

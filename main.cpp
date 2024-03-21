@@ -9,6 +9,7 @@ using namespace cv;
 //#define CBF_TEST
 //#define ALL_TEST
 #define SLACK_TEST
+//#define SLACK_REVERSE_TEST
 int main() {
     int i = 0;
     vector<float> vData;
@@ -33,6 +34,9 @@ int main() {
 #endif
 #ifdef SLACK_TEST
         qpSlackSolve();
+#endif
+#ifdef SLACK_REVERSE_TEST
+        qsSlackSolveReverse();
 #endif
         constraintControl();
         displayState(INVISIBLE, INVISIBLE);

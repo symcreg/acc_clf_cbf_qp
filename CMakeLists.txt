@@ -3,7 +3,7 @@ project(CLF_CBF_learn)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(OpenCV_DIR ${PROJECT_SOURCE_DIR}/include/opencv/install)
+#set(OpenCV_DIR ${PROJECT_SOURCE_DIR}/include/opencv/install)
 find_package(OpenCV REQUIRED)
 #set(osqp_DIR ${PROJECT_SOURCE_DIR}/include/osqp/install/lib/cmake/osqp)
 find_package(osqp REQUIRED)

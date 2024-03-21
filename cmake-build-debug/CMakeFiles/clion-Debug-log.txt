@@ -1,9 +1,14 @@
-E:\app\program_configure\cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/App/CLion 2022.3.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S E:\projects\clion\CLF_CBF_learn -B E:\projects\clion\CLF_CBF_learn\cmake-build-debug
--- OpenCV ARCH: x64
--- OpenCV RUNTIME: mingw
--- OpenCV STATIC: OFF
--- Found OpenCV 4.6.0 in E:/projects/clion/CLF_CBF_learn/include/opencv/install/x64/mingw/lib
--- You might need to add E:\projects\clion\CLF_CBF_learn\include\opencv\install\x64\mingw\bin to your PATH to be able to run your applications.
--- Configuring done (0.4s)
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/symc/CLionProjects/acc_clf_cbf_qp -B /home/symc/CLionProjects/acc_clf_cbf_qp/cmake-build-debug
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
+-- Found OpenCV: /usr (found version "4.9.0") 
+-- Configuring done (0.0s)
 -- Generating done (0.0s)
--- Build files have been written to: E:/projects/clion/CLF_CBF_learn/cmake-build-debug
+-- Build files have been written to: /home/symc/CLionProjects/acc_clf_cbf_qp/cmake-build-debug
