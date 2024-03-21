@@ -6,9 +6,9 @@ using namespace std;
 using namespace cv;
 //TODO:fix slack variable which makes clf constraint ineffective
 //#define CLF_TEST
-#define CBF_TEST
+//#define CBF_TEST
 //#define ALL_TEST
-//#define SLACK_TEST
+#define SLACK_TEST
 int main() {
     int i = 0;
     vector<float> vData;

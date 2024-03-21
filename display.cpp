@@ -29,35 +29,34 @@ void displayState(int textVisible, int imageVisible){
     }
 }
 void displayVData(int textVisible, int imageVisible, vector<float>& vData){
-    Mat img(1000, 1000, CV_8UC3, Scalar(0, 0, 0));
-    for(int i = 0; i < vData.size(); i++){
-        if(textVisible == VISIBLE){
-            cout<<"["<<i<<"]:"<<"v:"<<vData[i]<<endl;
-            cout<<"["<<i<<"]:"<<"diff:"<<physic_v_d - vData[i]<<endl;
+    if(textVisible == VISIBLE){
+        for(int i = 0; i < vData.size(); i++){
+            cout<<vData[i]<<endl;
         }
-        if(imageVisible == VISIBLE){
+    }
+    if(imageVisible == VISIBLE){
+        Mat img(1000, 1000, CV_8UC3, Scalar(0, 0, 0));
+        for(int i = 0; i < vData.size(); i++){
             line(img, Point(0, 500 - physic_v_d * 10), Point(1000, 500 - physic_v_d * 10), Scalar(255, 255, 255), 2);
             line(img, Point(i * 10, 500 - physic_v_d * 10), Point(i * 10, 500 - vData[i] * 10), Scalar(0, 0, 255), 2);
             line(img, Point(i * 10, 500), Point(i * 10, 500 - vData[i] * 10), Scalar(255, 255, 255), 2);
         }
-    }
-    if(imageVisible == VISIBLE){
         namedWindow("vData", WINDOW_NORMAL);
         imshow("vData", img);
         waitKey(0);
     }
 }
 void displayUData(int textVisible, int imageVisible, vector<float>& uData){
-    Mat img(1000, 1000, CV_8UC3, Scalar(0, 0, 0));
-    for(int i = 0; i < uData.size(); i++){
-        if(textVisible == VISIBLE){
+    if(textVisible == VISIBLE){
+        for(int i = 0; i < uData.size(); i++){
             cout<<uData[i]<<endl;
-        }
-        if(imageVisible == VISIBLE){
-            line(img, Point(i * 10, 500), Point(i * 10, 500 - uData[i] / 10), Scalar(255, 255, 255), 2);
         }
     }
     if(imageVisible == VISIBLE){
+        Mat img(1000, 1000, CV_8UC3, Scalar(0, 0, 0));
+        for(int i = 0; i < uData.size(); i++){
+            line(img, Point(i * 10, 500), Point(i * 10, 500 - uData[i] / 10), Scalar(255, 255, 255), 2);
+        }
         namedWindow("uData", WINDOW_NORMAL);
         imshow("uData", img);
         waitKey(0);
@@ -65,16 +64,16 @@ void displayUData(int textVisible, int imageVisible, vector<float>& uData){
 }
 
 void displayDelta(int textVisible, int imageVisible, std::vector<float>& delta){
-    Mat img(1000, 1000, CV_8UC3, Scalar(0, 0, 0));
-    for(int i = 0; i < delta.size(); i++){
-        if(textVisible == VISIBLE){
+    if(textVisible == VISIBLE){
+        for(int i = 0; i < delta.size(); i++){
             cout<<delta[i]<<endl;
-        }
-        if(imageVisible == VISIBLE){
-            line(img, Point(i * 10, 500), Point(i * 10, 500 - delta[i]), Scalar(255, 255, 255), 2);
         }
     }
     if(imageVisible == VISIBLE){
+        Mat img(1000, 1000, CV_8UC3, Scalar(0, 0, 0));
+        for(int i = 0; i < delta.size(); i++){
+            line(img, Point(i * 10, 500), Point(i * 10, 500 - delta[i]), Scalar(255, 255, 255), 2);
+        }
         namedWindow("delta", WINDOW_NORMAL);
         imshow("delta", img);
         waitKey(0);
