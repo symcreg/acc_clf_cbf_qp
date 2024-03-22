@@ -1,9 +1,0 @@
-# ninja log v5
-6	1900	7326895657324887	CMakeFiles/CLF_CBF_learn.dir/main.cpp.obj	bdfd375059eca776
-1909	2139	7326895659666395	CLF_CBF_learn.exe	c496afacbc8f2bc4
-7	2246	7326881872133198	CMakeFiles/CLF_CBF_learn.dir/dynamic.cpp.obj	95cfcb922fbd0235
-17	2027	7326489280454923	CMakeFiles/CLF_CBF_learn.dir/display.cpp.obj	f8f51f8c94357168
-6	1923	7326896048602738	CMakeFiles/CLF_CBF_learn.dir/main.cpp.obj	bdfd375059eca776
-1925	2157	7326896050885975	CLF_CBF_learn.exe	c496afacbc8f2bc4
-7	2022	7326901875029257	CMakeFiles/CLF_CBF_learn.dir/display.cpp.obj	f8f51f8c94357168
-2023	2262	7326901877383622	CLF_CBF_learn.exe	c496afacbc8f2bc4

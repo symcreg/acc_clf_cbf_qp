@@ -1,3 +1,0 @@
-/home/symc/CLionProjects/acc_clf_cbf_qp/cmake-build-debug/CMakeFiles/CLF_CBF_learn.dir
-/home/symc/CLionProjects/acc_clf_cbf_qp/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/symc/CLionProjects/acc_clf_cbf_qp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
