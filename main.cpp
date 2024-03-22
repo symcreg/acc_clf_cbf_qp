@@ -8,8 +8,8 @@ using namespace cv;
 //#define CLF_TEST
 //#define CBF_TEST
 //#define ALL_TEST
-#define SLACK_TEST
-//#define SLACK_REVERSE_TEST
+//#define SLACK_TEST
+#define SLACK_REVERSE_TEST
 int main() {
     int i = 0;
     vector<float> vData;
@@ -43,7 +43,7 @@ int main() {
     }
     displayVData(INVISIBLE, VISIBLE, vData);
     displayUData(INVISIBLE, VISIBLE, uData);
-    displayDelta(INVISIBLE, VISIBLE, Delta);
+    displayDelta(VISIBLE, VISIBLE, Delta);
 
     cout<<"i:"<<i<<" z:"<<z<<endl;
     return 0;

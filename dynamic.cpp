@@ -71,8 +71,8 @@ int qsSlackSolveReverse(){
         // Solve Problem
         exitFlag= osqp_solve(solver);
     }
-    control_u = solver->solution->x[0];
-    param_delta = solver->solution->x[1];
+    control_u = solver->solution->x[1];
+    param_delta = solver->solution->x[0];
 
     osqp_cleanup(solver);
     if(P) free(P);

@@ -27,8 +27,9 @@ $constraintValueCBF = (v_0 - v) + \gamma \cdot (z- Th \cdot v - \frac{1}{2} \cdo
 
 $f(x)=\frac{1}{2} \cdot x^T \cdot P \cdot x + q^T \cdot x$  
 $subject\ to:$  
-$aCLF \cdot x \leq constraintValueCLF$  
-$aCBF \cdot x \leq constraintValueCBF$  
+$aCLF \cdot u \leq constraintValueCLF - \delta$  
+$aCBF \cdot u \leq constraintValueCBF - \delta$  
+$\delta \geq 0$
 
 $x = \left[\begin{matrix} u \\ \delta \end{matrix}\right]$  
 
